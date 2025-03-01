@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, MAMU</title>
+    
+    <!-- Google Fonts for elegance and playfulness -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f0f1f6;
+        }
+
+        /* Full-screen Background */
+        .bg-image {
+            background-image: url('https://4kwallpapers.com/images/wallpapers/couple-silhouette-together-romantic-moon-black-background-5k-5400x3000-2926.png'); /* Customize with your image URL */
+            background-position: center;
+            background-size: cover;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            filter: brightness(40%);
+            z-index: -1;
+        }
+
+        .container {
+            text-align: center;
+            padding-top: 100px;
+            color: #fff;
+        }
+
+        /* Main Heading with customized title color */
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5rem;
+            color: #c8a2c8; /* Title Color changed to a soft lavender/pink shade */
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .countdown {
+            font-size: 2rem;
+            color: #fff;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            width: 80%;
+            margin: 20px auto;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        
+
+        /* Stickers */
+        .sticker {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 4rem;
+            animation: bounce 2s infinite;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .sticker-heart {
+            font-size: 3rem;
+            animation: heart-animation 2s infinite;
+        }
+
+        /* Fun Animation on Heart Sticker */
+        @keyframes heart-animation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Button Style */
+        .btn-surprise {
+            background-color: #c8a2c8;
+            color: #fff;
+            padding: 12px 35px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        .btn-surprise:hover {
+            transform: scale(1.05);
+            background-color: #9c72a3;
+        }
+
+        /* Surprise Section */
+        #surprise {
+            display: none;
+            padding: 30px;
+            background-color: #fff;
+            color: #333;
+            max-width: 800px;
+            margin: 50px auto;
+            border-radius: 10px;
+            box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #surprise h3 {
+            font-size: 2.5rem;
+            font-family: 'Pacifico', cursive;
+            color: #c8a2c8;
+            margin-bottom: 20px;
+        }
+
+        #surprise p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* Countdown Timer */
+        .timer {
+            font-weight: 700;
+            font-size: 2.5rem;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        /* Animated carousel fade effect */
+        .carousel-item {
+            transition: transform 2s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .countdown {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Image -->
+    <div class="bg-image"></div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Happy Birthday MAMU&#128157</h1>
+        
+        <!-- Countdown Timer -->
+        <div class="countdown" id="countdown">
+            <p>Time left until your special day:</p>
+            <div id="timer" class="timer"></div>
+        </div>
+
+       
+
+        <!-- Heart Sticker Animation -->
+        <div class="sticker sticker-heart">❤️</div>
+
+        <!-- Surprise Button -->
+        <button class="btn-surprise" onclick="showSurprise()">Click for Your Surprise</button>
+
+        <!-- Surprise Section -->
+        <div id="surprise">
+            <h3>To my endless forever love 💖</h3>
+            <p>Nv ante naku yentha estamo niku teliyanidhi kadhu,manam kalisi vunna lekuna mana prema matram yeppudu elane vuntundhi anna nammakam echav naku  </p>
+            <p>ninnu preminchadaniki na dhagara karanam ledhu kani yevaru chudanu konam lo nannu naku kotha chupinchav mamu,nenu ela kuda vunta anna sangathi ni valle telisindhi mamu naku </p>
+             <p>rey shivaaaaaaa.. i love u ra</p>
+            
+            
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        // Countdown Timer Script
+        const birthday = new Date("march 02, 2025 00:00:00").getTime();
+        const countdown = setInterval(function() {
+            const now = new Date().getTime();
+            const timeLeft = birthday - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            if (timeLeft < 0) {
+                clearInterval(countdown);
+                document.getElementById("timer").innerHTML = "HAPPY BIRTHDAY!";
+            }
+        }, 1000);
+
+        // Show the Surprise Section when button is clicked
+        function showSurprise() {
+            document.getElementById('surprise').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
